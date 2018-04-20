@@ -12,7 +12,7 @@ class User(db.Model):
     
     national_id = db.Column(db.String(30) , nullable=False , unique=True)
 
-    is_approved = db.Column(db.Boolean , default=True)
+    is_approved = db.Column(db.Boolean , default=False)
     
     age = db.Column(db.Integer , unique=False)
     
