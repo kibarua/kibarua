@@ -61,6 +61,11 @@ class Service(db.Model):
         }
         return services
 
+    def __str__(self):
+        return self.name
+
+    def __repr__(self):
+        return '<Service {}>'.format(self.name)
 
 class Client(db.Model):
     __tablename__ = 'clients'
