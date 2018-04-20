@@ -56,7 +56,7 @@ def add_client():
     service_id = data['service']
     phone = data['phone']
     national_id = data['national_id']
-    new_user = User(name=name , location=location , service_id = service_id , phone=phone)
+    new_user = User(name=name , location=location , service_id = service_id , phone=phone , national_id=national_id)
 
     new_user.save()
 
