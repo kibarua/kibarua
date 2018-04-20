@@ -12,17 +12,21 @@ class User(db.Model):
     
     national_id = db.Column(db.String(30) , nullable=False , unique=True)
 
-    is_employer = db.Column(db.Boolean , default=True)
+    is_approved = db.Column(db.Boolean , default=True)
     
     age = db.Column(db.Integer , unique=False)
     
     location = db.Column(db.String(128))
     photo = db.Column(db.String(128) , default='avatar.png')
 
+    
     service_id =  db.Column(db.Integer, db.ForeignKey('services.id'),
         nullable=True)
 
 
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
     
     def __str__(self):
         return self.name 

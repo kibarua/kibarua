@@ -45,6 +45,24 @@ def check_location():
         return jsonify({'available':True})
     return jsonify({'available':False})
 
+
+@api.route('/add_client' , methods=['POST'])
+def add_client():
+
+    data = request.get_json()
+
+    name = data['name']
+    location  =  data['location']
+    service_id = data['service']
+    phone = data['phone']
+
+    new_user = User(name=name , location=location , service_id = service_id , phone=phone)
+
+    new_user.save()
+
+    return jsonify({"message":"Created , wait for response"}) , 201
+
+
 @api.route('/add_task', methods=['POST'])
 def order_service():
     data = request.get_json()
