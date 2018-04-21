@@ -85,10 +85,13 @@ def order_service():
     task = Task(employer_id = contractor.id, 
                 client_id = client.id , 
                 service_id=service_id ,
-                task_id = str(get_unique_id()))
+                task_id = str(get_unique_id(contractor.id)))
     task.save()
     # client sms
     client_template = get_client_sms(contractor , task)
+    sms.send(client_template ,[client.phone],callback=on_finish)
 
+
+    contractor_template = get_contractor_sms(contractor,task)
     sms.send(client_template ,[client.phone],callback=on_finish)
     return jsonify()

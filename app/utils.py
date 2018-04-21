@@ -2,8 +2,10 @@ import random
 
 
 
-def get_unique_id():
-   return random.randrange(1000, 10000)
+def get_unique_id(id):
+    
+    return ''.join(random.choice(string.ascii_uppercase) for x in range(y))+id
+     
 
 def on_finish(error, response):
     if error is not None:
@@ -24,3 +26,12 @@ def get_client_sms(contractor , task):
         '''.format(contractor.name,
                 contractor.phone, 300 , task.task_id)
 
+
+def get_contractor_sms(contractor , task):
+     return '''Hello {} \n 
+        We have found a job for you.
+        Here are the details \n
+        Contactor Name :{} \n
+        TaskID:{}
+        '''.format(contractor.name,
+                contractor.phone , task.task_id)
