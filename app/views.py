@@ -91,6 +91,7 @@ def order_service():
     client_template = get_client_sms(contractor , task)
     sms.send(client_template ,[client.phone],callback=on_finish)
 
+    print(client_template)
 
     contractor_template = get_contractor_sms(contractor,task)
     sms.send(contractor_template ,[contractor.phone],callback=on_finish)
