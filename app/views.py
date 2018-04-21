@@ -93,6 +93,6 @@ def order_service():
 
     print(client_template)
 
-    contractor_template = get_contractor_sms(contractor,task)
-    sms.send(contractor_template ,[contractor.phone],callback=on_finish)
+    # contractor_template = get_contractor_sms(contractor,task)
+    # sms.send(contractor_template ,[contractor.phone],callback=on_finish)
     return jsonify({}) , 201

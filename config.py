@@ -16,6 +16,8 @@ class DevConfig(Config):
 
 class ProConfig(Config):
     DEBUG =False
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///'+os.path.join(BASE_DIR, 'app.db')
+    SQLALCHEMY_TRACK_MODIFICATIONS=False
 
 
 config = {
