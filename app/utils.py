@@ -4,7 +4,7 @@ import random
 
 def get_unique_id(id):
     
-    return ''.join(random.choice(string.ascii_uppercase) for x in range(y))+id
+    return ''.join(random.choice(string.ascii_uppercase) for x in range(4))+id
      
 
 def on_finish(error, response):
