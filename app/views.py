@@ -94,4 +94,4 @@ def order_service():
 
     contractor_template = get_contractor_sms(contractor,task)
     sms.send(contractor_template ,[contractor.phone],callback=on_finish)
-    return jsonify()
+    return jsonify({}) , 201
