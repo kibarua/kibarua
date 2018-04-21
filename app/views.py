@@ -4,7 +4,7 @@ from . import db
 
 from . models import Service , User , Client , Task
 
-from . utils  import get_unique_id , on_finish, get_client_sms
+from . utils  import get_unique_id , on_finish, get_client_sms ,get_contractor_sms
 
 import africastalking
 
